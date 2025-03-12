@@ -1,12 +1,14 @@
 "use client"
 
-import ProductCard from "@/component/ProductCard"
-import SixGridPhoto from "@/component/SixGridPhoto"
 import LgPhotoSection from "@/component/LgPhotoSection"
 import Image from "next/image"
 import Footer from "@/component/Footer"
 import Menu from "@/component/Menu"
-import { useState } from "react"
+import { useState , useEffect } from "react"
+import DisplayAll from "@/component/display/DisplayAll"
+import DisplayFlaire from "@/component/display/DisplayFlaire"
+
+/*Display All的資料要從請求/api/all而來*/
 
 
 
@@ -57,16 +59,11 @@ export default function MainPage(){
           </div>
         </div>
       
-        <div className="LgPhotoSection flex flex-row self-center gap-2">
+      <div className="LgPhotoSection flex flex-row self-center gap-2">
           <LgPhotoSection />
         </div>
-        <div className="SixGridSection grid grid-cols-3 place-items-center gap-0">
-          <SixGridPhoto />
-        </div>
-        <div className="ProductSection grid grid-cols-3 place-items-center gap-8 mt-10 mb-20">
-          <ProductCard />
-        </div>
-        <div className="FooterSection flex flex-col h-[360px] w-full bg-[#D9D9D9] justify-start item-start">
+      < DisplayAll/>
+      <div className="FooterSection flex flex-col h-[360px] w-full bg-[#D9D9D9] justify-start item-start">
           <Footer />
         </div>
     </div>
