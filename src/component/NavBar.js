@@ -3,11 +3,14 @@ import Image from "next/image"
 import Menu from "@/component/Menu"
 import { useState } from "react"
 import { useRouter } from 'next/navigation'
-
+import { CartContext } from "@/context/CartContext"
+import { useContext } from "react"
 
 export default function NavBar(){
   const [menuShow, setMenuShow] = useState(false) 
   const router = useRouter()
+  // const {totalCartItem, setTotalCartItem} = useContext(CartContext)
+  const {totalCartItem, setTotalCartItem}=useContext(CartContext)
 
   return(
         <div className="navBar w-full flex flex-row justify-start mt-0 mb-3 items-center h-[60px] fixed top-0 bg-[#FFFFFF]">
@@ -35,7 +38,8 @@ export default function NavBar(){
               <div className="account-text pl-3">Account</div>
             </div>
             <button className="cart flex flex-row justify-start pl-5 pr-5 items-center cursor-pointer" onClick={()=>router.push('/main/product/cart')}>
-              <div className="cart-icon">
+              <div className="cart-icon relative">
+                <div className="total-cart-item bg-black  rounded-[45px] absolute left-4 w-[20px] h-[20px] text-white">{totalCartItem}</div>
                 <Image src="/cart.png" alt="search" width={30} height={30}></Image>
               </div>
               <div className="cart-text pl-3">Cart</div>
