@@ -16,7 +16,7 @@ export default async function ProductPage({params}){
       <div className="productPageSection w-full flex flex-rows relative top-[160px]">
         <div className="left-section flex flex-col ml-10 w-2/8 ">
           <div className="left-section-top-btn">
-          <Link href="/main">
+          <Link href="/main/flare">
             <Image className="ml-35" src="/back.png" width={50} height={50} alt="back"/>
           </Link>
           </div>
@@ -40,7 +40,7 @@ export default async function ProductPage({params}){
             </div>
             <div className="right-section-product-detail-color mt-5">{product.productcolor}</div>
           </div>
-          <div className="right-section-product-size mt-20">s</div>
+          <div className="right-section-product-size mt-20"></div>
           <div className="right-section-product-add-to-basket mt-10">
             <CartButton productID={product.productuniqueid}/>
         </div>

@@ -3,10 +3,13 @@ import CartItem from "@/component/CartItem"
 import NavBar from "@/component/NavBar"
 import { useState, useEffect,useContext } from "react"
 import { CartContext } from "@/context/CartContext"
+import { useRouter } from "next/navigation"
 
 export default function CartPage(){
+  const router = useRouter()
   const [cartItemDetail,setCartItemDetail]=useState([])
-  const [totalPrice, setTotalPrice] = useState(0)
+  // const [totalPrice, setTotalPrice] = useState(0)
+  const {totalPrice, setTotalPrice}=useContext(CartContext)
   const {cartItemState, setCartItemState}=useContext(CartContext)
   const {totalCartItem, setTotalCartItem}=useContext(CartContext)
 
@@ -77,7 +80,7 @@ export default function CartPage(){
             </div>
           </div>
           <div className="shopping-cart-butn flex flex-rows justify-end">
-            <button className="shopping-cart-btn mb-20 border border-black rounded-md pl-5 pr-5 pt-3 pb-3 bg-black text-white">Continue</button>
+            <button className="shopping-cart-btn mb-20 border border-black rounded-md pl-5 pr-5 pt-3 pb-3 bg-black text-white cursor-pointer" onClick={()=>router.push("/main/product/checkout")}>Continue</button>
           </div>
         </div>
     </div>

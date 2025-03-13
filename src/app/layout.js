@@ -21,6 +21,7 @@ const geistMono = Geist_Mono({
 export default function RootLayout({ children }) {
   const [cartItemState, setCartItemState] = useState([])
   const [totalCartItem, setTotalCartItem] = useState(0)
+  const [totalPrice, setTotalPrice] = useState(0)
 
 
   return (
@@ -28,7 +29,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-         <CartContext.Provider value={{cartItemState, setCartItemState, totalCartItem, setTotalCartItem}}>
+         <CartContext.Provider value={{cartItemState, setCartItemState, totalCartItem, setTotalCartItem,totalPrice, setTotalPrice}}>
           {children}
         </CartContext.Provider>
       </body>

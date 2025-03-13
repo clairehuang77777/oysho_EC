@@ -17,6 +17,6 @@ export default function CartButton({productID}){
     router.push('/main/product/cart')
   }
   return (
-    <button className="addSubmitBtn rounded-md border border-black pl-10 pr-10 pt-3 pb-3 block cursor-pointer" type="submit" onClick={addToCart}>add</button>
+    <button className="addSubmitBtn rounded-md border border-black pl-3 pr-3 pt-1 pb-1 block cursor-pointer" type="submit" onClick={addToCart}>add</button>
   )
 }
