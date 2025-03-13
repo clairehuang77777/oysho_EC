@@ -6,7 +6,7 @@ export default function DisplayFlaire({products}){
     <>
     { products.length > 0 ? (
       products.map((product)=> (
-        <ProductCard key={product.id} product={product}/>
+        <ProductCard key={product.productuniqueid} product={product}/>
       ))
     ) : (
       <p>Currently No Product Here</p>

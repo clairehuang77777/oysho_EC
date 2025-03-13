@@ -2,10 +2,12 @@
 import Image from "next/image"
 import Menu from "@/component/Menu"
 import { useState } from "react"
+import { useRouter } from 'next/navigation'
 
 
 export default function NavBar(){
   const [menuShow, setMenuShow] = useState(false) 
+  const router = useRouter()
 
   return(
         <div className="navBar w-full flex flex-row justify-start mt-0 mb-3 items-center h-[60px] fixed top-0 bg-[#FFFFFF]">
@@ -32,12 +34,12 @@ export default function NavBar(){
               </div>
               <div className="account-text pl-3">Account</div>
             </div>
-            <div className="cart flex flex-row justify-start pl-5 pr-5 items-center">
+            <button className="cart flex flex-row justify-start pl-5 pr-5 items-center cursor-pointer" onClick={()=>router.push('/main/product/cart')}>
               <div className="cart-icon">
                 <Image src="/cart.png" alt="search" width={30} height={30}></Image>
               </div>
               <div className="cart-text pl-3">Cart</div>
-            </div>
+            </button>
           </div>
         </div>
   )

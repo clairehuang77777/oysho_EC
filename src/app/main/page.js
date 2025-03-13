@@ -61,7 +61,7 @@ export default function MainPage(){
       
       <div className="LgPhotoSection flex flex-row self-center gap-2">
           <LgPhotoSection />
-        </div>
+      </div>
       < DisplayAll/>
       <div className="FooterSection flex flex-col h-[360px] w-full bg-[#D9D9D9] justify-start item-start">
           <Footer />

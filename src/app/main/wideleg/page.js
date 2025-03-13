@@ -6,7 +6,7 @@ import NavBar from "@/component/NavBar"
 /*Display All的資料要從請求/api/all而來*/
 
 
-export default async function JoggerPage(){
+export default async function wideLegPage(){
   const res = await fetch("http://localhost:3000/api/wideleg",{cache : "no-store"})
   const products = await res.json()
   

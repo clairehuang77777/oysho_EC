@@ -1,9 +1,14 @@
+"use client"
+
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 export default function ProductCard({product}){
+  const router = useRouter()
+
   return (
     <>
-    <div className="ProductSection-ProductCard-1 basis-xs ">
+    <div className="ProductSection-ProductCard-1 basis-xs block cursor-pointer" onClick={()=>router.push(`/main/product/${product.productuniqueid}`)}>
       <div className="ProductSection-ProductCard-pic">
         <Image src={product.productsrc} alt="sixPhoto" width={280} height={338}/>
       </div>
