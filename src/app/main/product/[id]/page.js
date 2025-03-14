@@ -12,7 +12,7 @@ export default async function ProductPage({params}){
   console.log(product)
   return (
     <div className="container mx-auto flex flex-col items-center">
-      <NavBar/>
+      <NavBar/>npm 
       <div className="productPageSection w-full flex flex-rows relative top-[160px]">
         <div className="left-section flex flex-col ml-10 w-2/8 ">
           <div className="left-section-top-btn">

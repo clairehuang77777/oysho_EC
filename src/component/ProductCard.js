@@ -22,7 +22,7 @@ export default function ProductCard({product}){
           </div>
           <div className="ProductSection-ProductCard-color text-sm">{product.productcolor}</div>
       </div>
-      <div className="product-add-btn">
+      <div className="product-add-btn pt-5">
         <CartButton productID={product.productuniqueid}/>
       </div>
         </div>
