@@ -20,7 +20,7 @@ export default function LgPhotoSection(){
           <Link className="block cursor-pointer" href="/main" 
           onMouseEnter={()=>setMouseIn(true)} 
           onMouseLeave={()=>setMouseIn(false)}>
-            <Image src="/bnw_viewall.jpg" alt="sixPhoto" width={200} height={355} alt="photo"/>
+            <Image src="/bnw_viewall.jpg" alt="sixPhoto" width={200} height={355}/>
             <p className="mt-3 mb-3 text-center text-lg">View all</p>
             <motion.div className="button-line w-[200px] h-[3px] bg-black origin-left" 
             initial={{ scaleX:0 }} 

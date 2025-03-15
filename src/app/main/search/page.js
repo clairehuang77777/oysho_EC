@@ -43,10 +43,10 @@ export default function SearchPage(){
         <div className="selectedProductArea grid grid-cols-3 place-items-center gap-8 mt-10 mb-20">
           {searchedProduct.length > 0 ? 
             (searchedProduct.map((product)=>(
-              <ProductCard product={product}/>
+              <ProductCard key={product.productuniqueid} product={product}/>
               ))
             ) : (
-            <p>There's no search result</p>)
+            <p>Theres no search result</p>)
           }
         </div>
       </div>
