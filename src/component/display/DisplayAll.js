@@ -2,10 +2,11 @@ import ProductCard from "@/component/ProductCard"
 import SixGridPhoto from "@/component/SixGridPhoto"
 import { useEffect, useState } from "react"
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL
+
 
 export default function DisplayAll(){
     const [allProduct, setAllProduct] = useState([])
+    const API_URL = process.env.NEXT_PUBLIC_API_URL
 
     useEffect(() => {
       async function fetchAllProduct() {
