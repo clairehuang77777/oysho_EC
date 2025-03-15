@@ -8,7 +8,8 @@ export default function SearchPage(){
   const inputRef = useRef(null)
   const [searchedProduct, setSearchedProduct] = useState([])
 
-  
+  const API_URL = process.env.NEXT_PUBLIC_API_URL
+
 
   async function queryProductResult() {
     const keyword = inputRef.current.value
@@ -18,7 +19,7 @@ export default function SearchPage(){
       console.log("keyword為空")
     }
 
-    const res = await fetch(`http://localhost:3000/api/search/${keyword}`)
+    const res = await fetch(`${API_URL}/api/search/${keyword}`)
     const selectedProducts = await res.json()
     console.log(selectedProducts)
     setSearchedProduct(selectedProducts)

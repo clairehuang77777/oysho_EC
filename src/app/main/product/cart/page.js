@@ -12,6 +12,7 @@ export default function CartPage(){
   const {totalPrice, setTotalPrice}=useContext(CartContext)
   const {cartItemState, setCartItemState}=useContext(CartContext)
   const {totalCartItem, setTotalCartItem}=useContext(CartContext)
+  const API_URL = process.env.NEXT_PUBLIC_API_URL
 
   useEffect(()=>{
     const cartItem = JSON.parse(localStorage.getItem("cart")) ||[]
@@ -21,7 +22,7 @@ export default function CartPage(){
     async function getCartItemDeatil(){
       const productDetail = await Promise.all(
         cartItem.map(async (id) => {
-        const res = await fetch(`http://localhost:3000/api/productDetail/${id}`)
+        const res = await fetch(`${API_URL}/api/productDetail/${id}`)
         return res.json()
         })
       )

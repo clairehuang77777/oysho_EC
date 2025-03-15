@@ -3,10 +3,13 @@ import NavBar from "@/component/NavBar"
 import Link from "next/link"
 import CartButton from "@/component/CartButton"
 
+
 export default async function ProductPage({params}){
   const { id } = params
+  
+  const API_URL = process.env.NEXT_PUBLIC_API_URL
 
-  const res = await fetch(`http://localhost:3000/api/productDetail/${id}`,{cache : "no-store"})
+  const res = await fetch(`${API_URL}/api/productDetail/${id}`,{cache : "no-store"})
   console.log(res)
   const product = await res.json()
   console.log(product)
