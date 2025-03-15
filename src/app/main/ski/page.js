@@ -5,10 +5,9 @@ import DisplayFlaire from "@/component/display/DisplayFlaire"
 import NavBar from "@/component/NavBar"
 /*Display All的資料要從請求/api/all而來*/
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL
-
 
 export default async function skiPage(){
+  const API_URL = process.env.NEXT_PUBLIC_API_URL
   const res = await fetch(`${API_URL}/api/ski`,{cache : "no-store"})
   const products = await res.json()
   
