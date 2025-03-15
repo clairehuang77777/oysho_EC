@@ -5,6 +5,9 @@ import pg from "pg"
 //連接 PostgreSQL
 const pool = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 

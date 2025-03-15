@@ -5,7 +5,7 @@ import pg from "pg"
 const pool = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
-    rejectUnauthorized: false, // ✅ Render 需要這個
+    rejectUnauthorized: false,
   },
 });
 
