@@ -31,12 +31,14 @@ export default function CartPage(){
     }
 
     getCartItemDeatil()
-  },[cartItemState])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[cartItemState, API_URL])
 
   //更新購物車數字
   useEffect(()=>{
       setTotalCartItem(cartItemDetail.length)
       console.log(totalCartItem)
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   },[cartItemDetail])
 
   // //印出現在購物車有多少商品
@@ -57,7 +59,7 @@ export default function CartPage(){
       }
   
     getProductSum()
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[cartItemDetail])
   
 

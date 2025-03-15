@@ -29,7 +29,7 @@ export default async function ProductPage({params}){
             {product.productsrc ? (
               <Image src={product.productsrc} width={475} height={454} alt="product image"/>
             ): (
-              <p>There's no image</p>
+              <p>Theres no image</p>
             )}
           </div>
         </div>
