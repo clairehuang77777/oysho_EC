@@ -4,6 +4,9 @@ import pg from "pg"
 // 連接 PostgreSQL
 const pool = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false, // ✅ Render 需要這個
+  },
 });
 
 // 處理 GET 請求，回傳商品列表
